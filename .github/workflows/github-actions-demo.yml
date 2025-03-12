@@ -27,7 +27,6 @@ jobs:
           KUBECONFIG: ${{ github.workspace }}/kubeconfig
         run: |
          helm repo add artifact-hub https://artifacthub.github.io/helm-charts
-         helm init
          helm repo list
          helm search repo artifact-hub
          helm install my-release nginx \
