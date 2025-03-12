@@ -18,6 +18,8 @@ jobs:
           version: 'v1.23.0'
       - name: Install Helm
         uses: azure/setup-helm@v1
+        with:
+          version: 'v3.17.0'
       - name: Create kubeconfig file
         run: echo "${{ secrets.KUBECONFIG }}" > ${{ github.workspace }}/kubeconfig
       - name: Deploy to Kubernetes using Helm
@@ -28,6 +30,6 @@ jobs:
          helm init
          helm repo list
          helm search repo artifact-hub
-         helm install my-release oci://registry-1.docker.io/bitnamicharts/nginx. \
+         helm install my-release nginx \
          --namespace default 
       - run: echo "🍏 This job's status is ${{ job.status }}."
