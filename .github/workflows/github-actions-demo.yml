@@ -24,6 +24,7 @@ jobs:
         env:
           KUBECONFIG: ${{ github.workspace }}/kubeconfig
         run: |
+         helm repo update
          helm install my-release oci://registry-1.docker.io/bitnamicharts/nginx. \
          --namespace default 
       - run: echo "🍏 This job's status is ${{ job.status }}."
