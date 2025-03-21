@@ -28,6 +28,5 @@ jobs:
         run: |
          helm repo add artifact-hub https://artifacthub.github.io/helm-charts
          helm repo list
-         echo "Current Directory : `pwd`"
-         helm install my-release . --namespace default 
+         helm install my-release ${{ github.workspace }} --namespace default 
       - run: echo "🍏 This job's status is ${{ job.status }}."
