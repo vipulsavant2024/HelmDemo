@@ -28,7 +28,5 @@ jobs:
         run: |
          helm repo add artifact-hub https://artifacthub.github.io/helm-charts
          helm repo list
-         helm search repo artifact-hub
-         helm install my-release /workspaces/HelmDemo/nginx \
-         --namespace default 
+         helm install my-release . --namespace default 
       - run: echo "🍏 This job's status is ${{ job.status }}."
