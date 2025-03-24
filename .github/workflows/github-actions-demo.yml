@@ -38,6 +38,6 @@ jobs:
         run: |
          helm repo add artifact-hub https://artifacthub.github.io/helm-charts
          helm repo list 
-         #helm install my-release ${{ github.workspace }}/nginx --namespace default
-         helm install helm-demo oci://registry-1.docker.io/bitnamicharts/nginx --namespace default 
+         helm install my-release ${{ github.workspace }}/nginx --namespace default
+         #helm install helm-demo oci://registry-1.docker.io/bitnamicharts/nginx --namespace default 
       - run: echo "🍏 This job's status is ${{ job.status }}."
